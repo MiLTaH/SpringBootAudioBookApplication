@@ -1,0 +1,11 @@
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "username": "testuser3",
+  "password": "testpassword3",
+  "email": "test3@example.com"
+}
+###
+GET http://localhost:8080/showUserInfo
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM0OTIzODMsImlhdCI6MTczMzQ4ODc4MywidXNlcm5hbWUiOiJ0ZXN0dXNlcjMifQ.qFu_CXAmk0m4JuMEcd4X8t-paCy1LfFbweuFEdZ-Q1k
