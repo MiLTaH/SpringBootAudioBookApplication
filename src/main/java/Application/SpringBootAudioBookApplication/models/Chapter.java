@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "Chapters")
+@Table(name = "chapters")
 public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,9 @@ public class Chapter {
     private String nameChapter;
 
     @Size(max = 255, message = "Ссылка на главу должна быть до 255 символов длиной")
-    @Column(name = "chapterURL")
+    @Column(name = "chapterurl")
     private String chapterUrl;
-
+    //https://drive.google.com/file/d/1jjOl9W0Qc7-pN6_taTy8EwnFAEB-doqf/view?usp=drive_link
     @ManyToOne
     @JoinColumn(name = "id_voice", referencedColumnName = "id")
     private BookVoice bookVoice;
@@ -29,7 +29,6 @@ public class Chapter {
     @Column(name = "description")
     private String description;
 
-    // Конструкторы, геттеры и сеттеры
     public Chapter() {
     }
 

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "VoiceActors")
+@Table(name = "voiceactors")
 public class VoiceActor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,6 @@ public class VoiceActor {
     @OneToMany(mappedBy = "voiceActor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookVoice> bookVoices;
 
-    // Конструкторы, геттеры и сеттеры
     public VoiceActor() {
     }
 

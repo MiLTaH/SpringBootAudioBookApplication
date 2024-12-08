@@ -7,5 +7,22 @@ Content-Type: application/json
   "email": "test3@example.com"
 }
 ###
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser1",
+  "password": "testpassword1"
+}
+###
+GET http://localhost:8080/chapters/1/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1MjIyMjIsImlhdCI6MTczMzUxODYyMiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.PhbwJwnBXSBckJmwAalrAngxBKsEJ2CRhCAS_xzoKSY
+###
+GET http://localhost:8080/books/1/voices
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1ODIzOTUsImlhdCI6MTczMzU3ODc5NSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.nuJaUgMc1Kd7y3C2XProPoc3nXw2QUpqQxwrTv9YjXo
+###
 GET http://localhost:8080/showUserInfo
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM0OTIzODMsImlhdCI6MTczMzQ4ODc4MywidXNlcm5hbWUiOiJ0ZXN0dXNlcjMifQ.qFu_CXAmk0m4JuMEcd4X8t-paCy1LfFbweuFEdZ-Q1k
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM0OTcwNTAsImlhdCI6MTczMzQ5MzQ1MCwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ._C9ZIBBkUqYNy1Ps1KALCa_vk2rdMF59UykW9oec1Bc
+###
+GET http://localhost:8080/books/show
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1MDQ1NjYsImlhdCI6MTczMzUwMDk2NiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.k82VpsLma6rU5sEpkk3_iinW2OEsWp5AkCQtSHMhUsE

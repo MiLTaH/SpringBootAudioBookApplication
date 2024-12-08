@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "BookVoices")
+@Table(name = "bookvoices")
 public class BookVoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +16,12 @@ public class BookVoice {
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "id_VoiceActors", referencedColumnName = "id")
+    @JoinColumn(name = "id_voiceactors", referencedColumnName = "id")
     private VoiceActor voiceActor;
 
     @OneToMany(mappedBy = "bookVoice", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Chapter> chapters;
 
-    // Конструкторы, геттеры и сеттеры
     public BookVoice() {
     }
 

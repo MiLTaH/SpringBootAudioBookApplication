@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "Books")
+@Table(name = "books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Book {
     private String description;
 
     @Size(max = 255, message = "Ссылка на изображение книги должна быть до 255 символов длиной")
-    @Column(name = "bookImageURL")
+    @Column(name = "bookimageurl")
     private String bookImageUrl;
 
     @ManyToOne
