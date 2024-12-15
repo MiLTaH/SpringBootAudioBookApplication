@@ -38,12 +38,6 @@ public class SecurityConfig {
                         .requestMatchers("/auth/login", "/auth/registration", "/error").permitAll()
                         .anyRequest().hasAnyRole("USER", "ADMIN")
                 )
-                .formLogin(form -> form
-                        .loginPage("/auth/login")
-                        .loginProcessingUrl("/process_login")
-                        .defaultSuccessUrl("/hello", true)
-                        .failureUrl("/auth/login?error")
-                )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/auth/login")
@@ -53,7 +47,6 @@ public class SecurityConfig {
                 );
 
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 

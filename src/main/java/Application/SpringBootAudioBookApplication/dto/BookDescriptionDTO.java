@@ -14,7 +14,6 @@ public class BookDescriptionDTO {
         this.bookImageUrl = bookImageUrl;
     }
 
-
     public String getBookImageUrl() {
         return bookImageUrl;
     }
