@@ -30,7 +30,7 @@ public class User {
     @Column(name = "role")
     private String role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(mappedBy = "users")
     private List<Book> books;
 
     // Конструкторы, геттеры и сеттеры

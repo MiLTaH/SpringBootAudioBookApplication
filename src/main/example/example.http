@@ -15,6 +15,32 @@ Content-Type: application/json
   "password": "testpassword1"
 }
 ###
+POST /user/subscribeUserToBook HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyMzk2MTUsImlhdCI6MTc0NDIzNjAxNSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.Ww_NUI0EKnhOL9r0a_3CsxZuSFnEjgkDGjcFPPy6_7E
+Content-Type: application/json
+
+{
+  "userName": "testuser1",
+  "bookName": "Преступление и наказание"
+}
+###
+POST /genre/getBookGenre HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyNTM4NTUsImlhdCI6MTc0NDI1MDI1NSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.4EalFt8yIRIOkVYhuJkvtPvPmPTNXQFjao4ld9V4iqM
+Content-Type: application/json
+
+{
+  "bookName": "Преступление и наказание"
+}
+###
+POST /books/showRecommendBooks HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyNTM4NTUsImlhdCI6MTc0NDI1MDI1NSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.4EalFt8yIRIOkVYhuJkvtPvPmPTNXQFjao4ld9V4iqM
+Content-Type: application/json
+
+["Роман", "Триллер"]
+###
 GET http://localhost:8080/chapters/1/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1MjIyMjIsImlhdCI6MTczMzUxODYyMiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.PhbwJwnBXSBckJmwAalrAngxBKsEJ2CRhCAS_xzoKSY
 ###
@@ -25,4 +51,4 @@ GET http://localhost:8080/showUserInfo
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM0OTcwNTAsImlhdCI6MTczMzQ5MzQ1MCwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ._C9ZIBBkUqYNy1Ps1KALCa_vk2rdMF59UykW9oec1Bc
 ###
 GET http://localhost:8080/books/show
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1MDQ1NjYsImlhdCI6MTczMzUwMDk2NiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.k82VpsLma6rU5sEpkk3_iinW2OEsWp5AkCQtSHMhUsE
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyMzk2MTUsImlhdCI6MTc0NDIzNjAxNSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.Ww_NUI0EKnhOL9r0a_3CsxZuSFnEjgkDGjcFPPy6_7E

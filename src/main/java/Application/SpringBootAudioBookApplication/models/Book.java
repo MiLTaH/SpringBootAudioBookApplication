@@ -26,9 +26,11 @@ public class Book {
     @Column(name = "bookimageurl")
     private String bookImageUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "id_readuser", referencedColumnName = "id")
-    private User user;
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "book_user",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> users;
 
     @ManyToOne
     @JoinColumn(name = "id_author", referencedColumnName = "id")
@@ -36,6 +38,12 @@ public class Book {
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookVoice> bookVoices;
+
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "book_genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private List<Genre> genres;
 
     // Конструкторы, геттеры и сеттеры
     public Book() {
@@ -73,12 +81,12 @@ public class Book {
         this.bookImageUrl = bookImageUrl;
     }
 
-    public User getUser() {
-        return user;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public Author getAuthor() {
@@ -96,5 +104,12 @@ public class Book {
     public void setBookVoices(List<BookVoice> bookVoices) {
         this.bookVoices = bookVoices;
     }
-}
 
+    public List<Genre> getGenres() {
+       return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
+}

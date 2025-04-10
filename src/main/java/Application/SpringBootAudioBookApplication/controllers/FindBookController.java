@@ -24,6 +24,15 @@ public class FindBookController {
         return findBooksService.findAllBooks(bookname);
     }
 
+    @GetMapping("/showPopularBooks")
+    public List<FindBookDTO> showPopularBooks() {
+        return findBooksService.findPopularBooksBooks();
+    }
+    @PostMapping("/showRecommendBooks")
+    public List<FindBookDTO> showRecommendBooks(@RequestBody List<String> genres) {
+        return findBooksService.findRecommendedBooks(genres);
+    }
+
     @GetMapping("/{id}/voices")
     public List<FindVoicesDTO> getVoices(@PathVariable int id) {
         return findVoicesService.findVoicesByBookId(id);
