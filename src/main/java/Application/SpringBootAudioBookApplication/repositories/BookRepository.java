@@ -33,19 +33,20 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     List<Book> findTop100PopularBooksNative();
 
     @Query(value = """
-        SELECT b.*
-        FROM (
-            SELECT b.*, 
-                   COUNT(DISTINCT CASE WHEN bg.genre_id IN (:genreIds) THEN bg.genre_id END) AS matching_genres_count,
-                   COUNT(DISTINCT bu.user_id) AS user_count
-            FROM books b
-            LEFT JOIN book_genre bg ON b.id = bg.book_id
-            LEFT JOIN book_user bu ON b.id = bu.book_id
-            GROUP BY b.id
-        ) AS b
-        ORDER BY b.matching_genres_count DESC, b.user_count DESC
-        LIMIT 100
-        """, nativeQuery = true)
+    SELECT sub.*
+    FROM (
+        SELECT b.*, 
+               COUNT(DISTINCT CASE WHEN bg.genre_id IN (:genreIds) THEN bg.genre_id END) AS matching_genres_count,
+               COUNT(DISTINCT bu.user_id) AS user_count
+        FROM books b
+        LEFT JOIN book_genre bg ON b.id = bg.book_id
+        LEFT JOIN book_user bu ON b.id = bu.book_id
+        GROUP BY b.id
+    ) AS sub
+    ORDER BY 
+        (COALESCE(sub.matching_genres_count, 0) * 1000 + COALESCE(sub.user_count, 0)) DESC
+    LIMIT 100
+    """, nativeQuery = true)
     List<Book> findAllBooksSortedByGenreMatchesAndUserCount(@Param("genreIds") List<Integer> genreIds);
 
     List<Book> findAllByBookNameIgnoreCase(String title);

@@ -27,7 +27,7 @@ Content-Type: application/json
 ###
 POST /genre/getBookGenre HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyNTM4NTUsImlhdCI6MTc0NDI1MDI1NSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.4EalFt8yIRIOkVYhuJkvtPvPmPTNXQFjao4ld9V4iqM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDc5NDE1MDYsImlhdCI6MTc0NzkzNzkwNiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.v4kak0mYXxSarS1f68R3ZnBbA8EhclEFcvWurqGC59g
 Content-Type: application/json
 
 {
@@ -36,10 +36,17 @@ Content-Type: application/json
 ###
 POST /books/showRecommendBooks HTTP/1.1
 Host: localhost:8080
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDQyNTM4NTUsImlhdCI6MTc0NDI1MDI1NSwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.4EalFt8yIRIOkVYhuJkvtPvPmPTNXQFjao4ld9V4iqM
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDc5NDE1MDYsImlhdCI6MTc0NzkzNzkwNiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.v4kak0mYXxSarS1f68R3ZnBbA8EhclEFcvWurqGC59g
 Content-Type: application/json
 
-["Роман", "Триллер"]
+["Роман", "Драма", "Философия"]
+###
+POST /books/showRecommendBooks HTTP/1.1
+Host: localhost:8080
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3NDc5NDE1MDYsImlhdCI6MTc0NzkzNzkwNiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.v4kak0mYXxSarS1f68R3ZnBbA8EhclEFcvWurqGC59g
+Content-Type: application/json
+
+["Драма", "Сатира", "Философия", "Мистика"]
 ###
 GET http://localhost:8080/chapters/1/1
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJTcHJpbmdCb290QXBwbGljYXRpb24iLCJleHAiOjE3MzM1MjIyMjIsImlhdCI6MTczMzUxODYyMiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjEifQ.PhbwJwnBXSBckJmwAalrAngxBKsEJ2CRhCAS_xzoKSY
